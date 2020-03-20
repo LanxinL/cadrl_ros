@@ -77,7 +77,7 @@ cd ~/catkin_ws/src
 git clone git@github.com/mfe7/cadrl_ros
 git clone git@bitbucket.org:acl-swarm/ford_msgs.git -b dev
 cd ~/catkin_ws && catkin_make
-source devel/setup.bash
+source devel/setup.bash # FYI:https://answers.ros.org/question/65003/roscd-no-such-packagestack-beginner_tutorials/
 roscd src/ford_msg
 ```
 
