@@ -32,6 +32,8 @@ Bibtex:
 * numpy is required
 
 * [ROS](http://wiki.ros.org/) is optional (tested with Kinetic on Ubuntu 16.04)
+	- ros installation document for ubuntu: http://wiki.ros.org/kinetic/Installation/Ubuntu
+	- if you cannot find `rosdep` when `sudo rosdep init`, please try to `source /opt/ros/kinetic/setup.bash` which is mentioned in sec 1.6 of ros installation document.
 
 * [ford_msgs](https://bitbucket.org/acl-swarm/ford_msgs/src/master/) if you're using ROS, for our custom msg definitions.
 
@@ -41,7 +43,7 @@ Those contain the policy as reported in our paper and enables other reasearchers
 
 To make it easy to understand the flow of the code, we provide an example in `scripts/ga3c_cadrl_demo.ipynb`, in the form of a Jupyter notebook. This can be used just as a reference, but if you want to edit the file, make sure Jupyter is installed in your tensorflow virtualenv to be sure it will work.
 
-#### To Run Jupyter Notebook (minimum working example of algorithm)
+#### To Run Jupyter Notebook (minimum working example of algorithm) `This is just a demo to show the usage of trained agent model`
 
 This assumes you have `nvidia-docker` installed already. Might work with regular docker with minor changes.
 
@@ -70,10 +72,13 @@ For short distances, say in an open atrium, this is probably not necessary.
 #### To Run ROS version:
 Clone and build this repo and its dependency (assume destination is ~/catkin_ws/src)
 ```
+mkdir ~/catkin_ws/src
 cd ~/catkin_ws/src
 git clone git@github.com/mfe7/cadrl_ros
 git clone git@bitbucket.org:acl-swarm/ford_msgs.git -b dev
 cd ~/catkin_ws && catkin_make
+source devel/setup.bash
+roscd src/ford_msg
 ```
 
 Connect inputs/outputs of your system to `launch/cadrl_node.launch`
